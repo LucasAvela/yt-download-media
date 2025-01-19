@@ -1,5 +1,5 @@
 # yt-download-media
-[ [English](README.md) | [PT-BR](./docs/README.br.md) ]
+[ [English](./README.md) | [PT-BR](./docs/README.br.md) ]
 
 yt-download-media é uma ferramenta para baixar vídeos e áudios do YouTube de maneira simples e eficiente.
 
