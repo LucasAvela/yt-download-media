@@ -1,87 +1,87 @@
 # yt-download-media
+[ [English](README.md) | [PT-BR](./docs/README.pt.md) ]
+`yt-download-media` is a tool for downloading videos and audio from YouTube simply and efficiently.
 
-`yt-download-media` é uma ferramenta para baixar vídeos e áudios do YouTube de maneira simples e eficiente.
+## Features
 
-## Recursos
+- Support for video and audio downloads.
+- User-friendly interface.
+- Integration with the `yt-dlp` library for media processing. (https://github.com/yt-dlp/yt-dlp)
 
-- Suporte para download de vídeos e áudios.
-- Interface amigável e de fácil uso.
-- Integração com a biblioteca `yt-dlp` para processamento de mídia. (https://github.com/yt-dlp/yt-dlp)
+## Requirements
 
-## Requisitos
+Ensure you have the following installed before using the project:
 
-Certifique-se de ter o seguinte instalado antes de usar o projeto:
+- Python 3.10 or higher
+- `yt-dlp` (installed via `pip`)
 
-- Python 3.10 ou superior
-- `yt-dlp` (instalado via `pip`)
+## Installation
 
-## Instalação
-
-1. Clone o repositório:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/LucasAvela/yt-download-media.git
    cd yt-download-media
    ```
 
-2. Instale as dependências necessárias:
+2. Install the required dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-## Uso
+## Usage
 
-1. Execute o script principal:
+1. Run the main script:
 
    ```bash
    python main.pyw
    ```
 
-2. Insira o URL do vídeo do YouTube no campo "Video or Playlist URL".
-3. Insira o caminho de saída no campo "Output PATH".
-4. Escolha a o formato de saída.
-5. Aguarde o término do processo. O arquivo será salvo no diretório especificado.
+2. Enter the YouTube video URL in the "Video or Playlist URL" field.
+3. Enter the output path in the "Output PATH" field.
+4. Choose the output format.
+5. Wait for the process to finish. The file will be saved in the specified directory.
 
-## Estrutura do Projeto
+## Project Structure
 
 ```plaintext
 yt-download-media/
-├── main.pyw            # Arquivo principal do projeto
-├── downloadManager.py  # Dependência do projeto
-├── requirements.txt    # Dependências do Python
-├── README.md           # Documentação do projeto
+├── main.pyw            # Main project file
+├── downloadManager.py  # Project dependency
+├── requirements.txt    # Python dependencies
+├── README.md           # Project documentation
 ```
 
-## Contribuição
+## Contribution
 
-Contribuições são bem-vindas! Para contribuir:
+Contributions are welcome! To contribute:
 
-1. Faça um fork do projeto.
-2. Crie uma nova branch para sua funcionalidade ou correção de bug:
-
-   ```bash
-   git checkout -b minha-branch
-   ```
-
-3. Faça as alterações e commit:
+1. Fork the project.
+2. Create a new branch for your feature or bug fix:
 
    ```bash
-   git commit -m "Descrição das alterações"
+   git checkout -b my-branch
    ```
 
-4. Envie suas alterações:
+3. Make the changes and commit:
 
    ```bash
-   git push origin minha-branch
+   git commit -m "Description of changes"
    ```
 
-5. Abra um Pull Request.
+4. Push your changes:
 
-## Licença
+   ```bash
+   git push origin my-branch
+   ```
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+5. Open a Pull Request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Feito com 💻 por [Lucas Avela](https://github.com/LucasAvela).
+Made with 💻 by [Lucas Avela](https://github.com/LucasAvela).
