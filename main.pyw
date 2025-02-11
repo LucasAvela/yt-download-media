@@ -32,7 +32,7 @@ class YoutubeDownloaderApp(ctk.CTk):
     def init_ui(self):
         self.title("Corylus Youtube Downloader")
         self.geometry("800x300")
-        self.iconbitmap('Icon0.ico')
+        self.iconbitmap('icon0.ico')
 
         self.create_label("Video or Playlist URL", 18).pack(pady=10)
         self.url_field = self.create_entry(750, font_size=18)

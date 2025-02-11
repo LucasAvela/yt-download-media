@@ -20,9 +20,9 @@ class DownloadManager:
             if 'entries' in result:
                 for video in result['entries']:
                     video_links.append(video['url'])
-                for video in video_links:
+                for i, video in enumerate(video_links):
                     if format == 'VIDEO':
-                        self.downloadVideo(video, out)
+                        self.downloadVideo(video, out, index=str(i+1))
                     elif format == 'AUDIO':
                         self.downloadAudio(video, out, audio_ext)
             else:
@@ -31,13 +31,15 @@ class DownloadManager:
                 elif format == 'AUDIO':
                     self.downloadAudio(url, out, audio_ext)
     
-    def downloadVideo(self, url, out):
+    def downloadVideo(self, url, out, index=None):
         self.url = url
         self.out = out
+        self.index = f"{index} - " if index else ''
 
         self.video_opts = {
             'format': 'bestvideo/best',
             'outtmpl': f'{self.out}/%(title)s_video.%(ext)s',
+            'merge_output_format': 'mp4',
         }
         self.audio_opts = {
             'format': 'bestaudio/best',
@@ -47,7 +49,7 @@ class DownloadManager:
                 'preferredcodec': 'wav',
             }],
         }
-
+        
         with yt_dlp.YoutubeDL(self.video_opts) as video_ydl:
             video_info_dict = video_ydl.extract_info(self.url, download=True)
             video_file = video_ydl.prepare_filename(video_info_dict)
@@ -58,17 +60,14 @@ class DownloadManager:
             audio_file = audio_ydl.prepare_filename(audio_info_dict).replace('.'+ext, '.wav')
 
         safe_title = re.sub(r'[<>:"/\\|?*]', '_', video_info_dict["title"])
-        output_file = f'{self.out}/{safe_title}.mp4'
+        output_file = f'{self.out}/{self.index}{safe_title}.mp4'
 
-        subprocess.run([
-            'ffmpeg', 
-            '-i', video_file, 
-            '-i', audio_file, 
-            '-c:v', 'copy', 
-            '-c:a', 'aac', 
-            '-strict', 'experimental', 
-            output_file,
-        ])
+        ffmpeg_command = [
+            'ffmpeg', '-i', video_file, '-i', audio_file, 
+            '-c:v', 'copy', '-c:a', 'aac', '-strict', 'experimental',
+            output_file
+        ]
+        subprocess.run([arg for arg in ffmpeg_command if arg])
 
         if os.path.exists(video_file):
             os.remove(video_file)
