@@ -14,7 +14,7 @@ yt-download-media é uma ferramenta para baixar vídeos e áudios do YouTube de 
 Certifique-se de ter o seguinte instalado antes de usar o projeto:
 
 - Python 3.10 ou superior
-- yt-dlp (instalado via pip)
+- FFMPEG adicionado no PATH do sistema.
 
 ## Instalação
 
