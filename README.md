@@ -14,7 +14,7 @@
 Ensure you have the following installed before using the project:
 
 - Python 3.10 or higher
-- `yt-dlp` (installed via `pip`)
+- FFMPEG to system PATH
 
 ## Installation
 
@@ -39,7 +39,7 @@ Ensure you have the following installed before using the project:
    python main.pyw
    ```
 
-2. Enter the YouTube video URL in the "Video or Playlist URL" field.
+2. Enter the YouTube/Facebook/Instagram/Twitter video URL in the "Video or Playlist URL" field.
 3. Enter the output path in the "Output PATH" field.
 4. Choose the output format.
 5. Wait for the process to finish. The file will be saved in the specified directory.
