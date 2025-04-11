@@ -2,6 +2,7 @@
 [ [English](./README.md) | [PT-BR](./docs/README.br.md) ]
 
 `yt-download-media` is a tool for downloading videos and audio from YouTube simply and efficiently.
+<img src="docs/Capture.png" width="400"/>
 
 ## Features
 
